@@ -7,24 +7,57 @@
 </head>
 
 <body>
-	<h1>Introduction</h1>
+	<h1>Requirements</h1>
 	<hr>
 	<h2><a name="ct">Table of contents</a></h2>
 	<ol>
-	  	<li><a href="#first">Purpose</a></li>
-	  	<li><a href="#second">Scope</a></li>
-	 	<li><a href="#third">Definitions, Acronyms, and Abbreviations</a></li>
-	  	<li>References</li>
-	 	<li>Overview</li>
+	  	<li><a href="#fr">Functional Requirements</a></li>
+	  	<li><a href="#eir">External Interface Requirements</a>
+	  		<ol>
+	  			<li><a href="#ui">User Interfaces</a></li>
+	  			<li><a href="#hi">Hardware Interfaces</a></li>
+	  			<li><a href="#si">Software Interfaces</a></li>
+	  			<li><a href="#ci">Communications Interfaces</a></li>
+	  		</ol>
+	  	</li>
+	 	<li><a href="#performance">Performance Requirements</a></li>
+	  	<li><a href="#design">Design Constraints</a></li>
 	</ol>
 	<hr>
-	<div style="height: 400px;">
-		<h2><a name="first" href="#ct">Purpose</a></h2>
+	<div>
+		<h2><a name="fr">Functional Requirements</a></h2>
+		<p>После проверки</p>
 	</div>
-	<div style="height: 400px;">
-		<h2><a name="second" href="#ct">Scope</a></h2>
+	<div>
+		<h2><a name="eir">External Interface Requirements</a></h2>
+		<div>
+			<h3><a name="ui">User Interface</a></h3>
+			<p>Пользовательским интерфейсом выступает браузер (или командная строка для продвинутых пользователей). Дополнительных требований к взаимодействию между пользователем и интерфейсом помимо тех, которые есть у стандартных браузеров, нет.</p>
+		</div>
+		<div>
+			<h3><a name="hi">Hardware Interface</a></h3>
+			<p>Интерфейсом выступает PC или мобильное устройство.</p>
+		</div>
+		<div>
+			<h3><a name="si">Software Interfaces</a></h3>
+			<p>Интерфейсом выступает браузер и ОС пользователя, которые нужны для сохранения архива с картинками.</p>
+		</div>
+		<div>
+			<h3><a name="ci">Communications Interfaces</a></h3>
+			<p>Стандартный способ взаимодействия с веб-сервисом - браузер. Взаимодействие между этим сервисом и браузером происходит по протоколу HTTP 1.2 (не HTTP 2.0, чтобы поддерживать старые устройства, версии браузеров и библиотек)</p>
+		</div>
 	</div>
-	<div style="height: 400px;">
-		<h2><a name="third" href="#ct">Definitions, Acronyms, and Abbreviations</a></h2>
+	<div>
+		<h2><a name="performance">Performance Requirements</a></h2>
+		<p>Пропускная способность (количество запросов, которые могут обрабатывать одновременно) - 1.</p>
+	</div>
+	<div>
+		<h2><a name="design">Design Constraints</a></h2>
+		<p>Дизайн системы изображен на картинке ниже.</p>
+		<img src="../design.jpg" align="center">
+	</div>
+	<hr>
+	<div>
+		<a href="#ct">К содержанию</a>
 	</div>
 </body>
