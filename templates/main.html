@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>NFT Bugs Generator</title>
+    <script>
+        function gen_img() {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", "/api/v1/generate_one_image", false);
+            xmlHttp.send();
+            var div = document.getElementById("placeholder");
+            div.innerHTML = xmlHttp.responseText;
+        }
+    </script>
+</head>
+<body>
+    <h1>Type number of images you want to generate</h1>
+    <form action="/api/v1/generate_images?count=10" method="get">
+        <input type="text" name="count">
+        <button type="submit">Genrate</button>
+    </form>
+    <h1>Generate random bug</h1>
+    <div id="placeholder"></div>
+    <button onclick="gen_img()">Generate</button>
+
+
+</body>
+</html>
