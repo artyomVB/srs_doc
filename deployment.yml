@@ -20,4 +20,4 @@ spec:
       - name: nft-server
         image: oleandertwig/nft-server:latest
         ports: 
-        - containerPort: 80
+        - containerPort: 8000
