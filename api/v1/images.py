@@ -4,7 +4,7 @@ import zipfile
 from fastapi import FastAPI
 from fastapi.responses import FileResponse, HTMLResponse, PlainTextResponse
 
-from bugs_generator.bugs_generation import generateRandomBug
+from bugs_generator.bugs_generation import BugGenerator
 
 app = FastAPI()
 
@@ -21,8 +21,10 @@ async def root():
 
 @app.get("/api/v1/generate_images")
 async def generate_images(count: int):
+    generator = BugGenerator("Example.svg")
     for i in range(count):
-        generateRandomBug("Example.svg", f"bug_{i}.png")
+        generator.regenerateBug()
+        generator.exportToPNG(f"bug_{i}.png")
     file_path = 'reportDir' + str(uuid.uuid4()) + '.zip'
     with zipfile.ZipFile(file_path, 'w') as myzip:
         for i in range(count):
