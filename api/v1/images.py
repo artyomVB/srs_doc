@@ -5,9 +5,10 @@ from fastapi import FastAPI
 from fastapi.responses import FileResponse, HTMLResponse, PlainTextResponse
 
 from bugs_generator.bugs_generation import BugGenerator
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
-
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/main")
 async def root():
