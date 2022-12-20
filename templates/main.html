@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>NFT Bugs Generator</title>
+    <title>NFT Bug Hunt</title>
     <script>
         function gen_img() {
             var xmlHttp = new XMLHttpRequest();
@@ -12,17 +12,48 @@
             div.innerHTML = xmlHttp.responseText;
         }
     </script>
+    <style>
+        body {
+            background-image: url('pics/background.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        h1 {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        h2 {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        form {
+            position: relative;
+            left: 40%;
+        }
+        
+        button {
+            position: relative;
+            border-radius: 10px;
+            background-color: #4d2600;
+            border: none;
+            width: auto;
+            color: white;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Type number of images you want to generate</h1>
+    <h1>NFT Bug Hunt</h1>
+    <h2>Type a number of images you want to generate</h2>
     <form action="/api/v1/generate_images" method="get">
-        <input type="text" name="count">
+        <input type="text" name="count" placeholder="15">
         <button type="submit">Generate archive</button>
     </form>
-    <h1>Generate random bug</h1>
-    <div id="placeholder"></div>
-    <button onclick="gen_img()">Generate</button>
-
+    <h2>Generate random bug</h2>
+    <form style="position:relative;left:47%;">
+        <button onclick="gen_img()">Generate</button>
+    </form>
 
 </body>
 </html>
