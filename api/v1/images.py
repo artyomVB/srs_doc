@@ -34,6 +34,6 @@ async def generate_images(count: int):
 
 @app.get("/api/v1/generate_one_image")
 async def generate_one_image():
-    with open("Example.svg") as img:
-        text = img.read()
-    return PlainTextResponse(content=text)
+    generator = BugGenerator("Example.svg")
+    generator.regenerateBug()
+    return PlainTextResponse(content=generator.exportToCSVString())
